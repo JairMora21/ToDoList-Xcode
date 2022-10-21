@@ -17,12 +17,28 @@ class ViewController: UIViewController {
     //Referencia al coredata
     let contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    // 1
     override func viewDidLoad() {
         super.viewDidLoad()
         tablaTareas.delegate = self
         tablaTareas.dataSource = self
         
         leerTareas()
+    } 
+    // 2
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    // 3
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    // 4
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
     }
 
     
@@ -61,6 +77,7 @@ class ViewController: UIViewController {
         self.tablaTareas.reloadData()
     }
     
+    //lee las tareas
     func leerTareas(){
         let solicitud : NSFetchRequest<Tarea> = Tarea.fetchRequest()
         
@@ -85,6 +102,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         
         let  tarea = listaTareas[indexPath.row]
         //Operadores ternearios
+        //pone los valores de la tarea en la tabla
         celda.textLabel?.text = tarea.nombre
         celda.textLabel?.textColor = tarea.realizada ? .black : .blue
         

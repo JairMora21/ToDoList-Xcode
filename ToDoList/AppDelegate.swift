@@ -1,4 +1,4 @@
-//
+                                                  //
 //  AppDelegate.swift
 //  ToDoList
 //
@@ -12,9 +12,11 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-
+// es lo primero que se ejecuta cuando abres la aplicacion, ya que  el @main que esta en la parte superior de la clase es el punto de entrada
+//del sistema operativo para compilar la app 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        print("La app se a lanzado")
         return true
     }
 
@@ -22,12 +24,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
+        print("Escena creada")
         // Use this method to select a configuration to create the new scene with.
+
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         // Called when the user discards a scene session.
+        print("Escena descartada")
+
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
