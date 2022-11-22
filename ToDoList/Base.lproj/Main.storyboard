@@ -50,14 +50,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VwR-lD-cjU">
-                                <rect key="frame" x="184" y="764" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="0nK-E9-yD6" kind="show" id="uWB-0W-63I"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -83,23 +75,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.98550724637687" y="93.75"/>
+            <point key="canvasLocation" x="945" y="-119"/>
         </scene>
-        <!--View Controller Two-->
-        <scene sceneID="d3p-TJ-LtT">
+        <!--View Controller-->
+        <scene sceneID="GA8-h6-B99">
             <objects>
-                <viewController id="0nK-E9-yD6" customClass="ViewControllerTwo" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gBf-U8-7Zs">
+                <viewController id="eXt-Ov-Bmr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qzn-4j-4Sd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="nve-oa-dVc"/>
+                        <viewLayoutGuide key="safeArea" id="lDa-Xy-VGg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="l7p-pf-qqD"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="s7U-WO-s90" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YYt-zt-w5L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1706" y="90"/>
+            <point key="canvasLocation" x="986" y="552"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FU8-uV-Kho">

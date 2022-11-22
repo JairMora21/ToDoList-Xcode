@@ -17,39 +17,25 @@ class ViewController: UIViewController {
     //Referencia al coredata
     let contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    // 1
     override func viewDidLoad() {
         super.viewDidLoad()
         tablaTareas.delegate = self
         tablaTareas.dataSource = self
-        
         leerTareas()
     } 
-    // 2
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    // 3
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    // 4
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-    }
-
+ 
     
     @IBAction func nuevaTarea(_ sender: UIBarButtonItem) {
         var nombreTarea = UITextField()
+        var nombreSubTarea = UITextField()
+
         
         let alerta = UIAlertController(title: "Nueva", message: "Tarea", preferredStyle: .alert)
         
         let accionAceptar = UIAlertAction(title: "Agregar", style: .default) { (_) in
             let nuevaTarea = Tarea(context: self.contexto)
             nuevaTarea.nombre = nombreTarea.text
+            nuevaTarea.sub = nombreSubTarea.text
             nuevaTarea.realizada = false
             
             self.listaTareas.append(nuevaTarea)
@@ -61,9 +47,35 @@ class ViewController: UIViewController {
             textFieldAlert.placeholder = "Escribe tu texto aqui.."
             nombreTarea =  textFieldAlert
         }
+        alerta.addTextField { textFieldAlert in
+            textFieldAlert.placeholder = "SubTarea"
+            nombreSubTarea =  textFieldAlert
+        }
         alerta.addAction(accionAceptar)
         
         present(alerta,animated: true)
+        /*
+        var nombreSub = UITextField()
+        
+        let alertaSub = UIAlertController(title: "Subtarea", message: "SUBTarea", preferredStyle: .alert)
+        
+        let accionAceptarSub = UIAlertAction(title: "Agregar", style: .default) { (_) in
+            let nuevaTareaSub = Tarea(context: self.contexto)
+            nuevaTareaSub.sub = nombreSub.text
+            
+            self.listaTareas.append(nuevaTareaSub)
+            
+            self.guardar()
+        }
+        
+        alertaSub.addTextField { textFieldAlert in
+            textFieldAlert.placeholder = "Escribe tu texto aqui.."
+            nombreSub =  textFieldAlert
+        }
+        alertaSub.addAction(accionAceptarSub)
+        
+        present(alertaSub,animated: true)
+  */
     }
     
     
@@ -103,16 +115,20 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         let  tarea = listaTareas[indexPath.row]
         //Operadores ternearios
         //pone los valores de la tarea en la tabla
+        celda.textLabel?.text = tarea.sub
         celda.textLabel?.text = tarea.nombre
+
+        /*pone de color la tarea depende si esa hecha o no
         celda.textLabel?.textColor = tarea.realizada ? .black : .blue
         
         celda.detailTextLabel?.text = tarea.realizada ? "Completada" : "Por completar"
         
         //marcar tareas completadas
         celda.accessoryType = tarea.realizada ? .checkmark : .none
-        
+        */
         return celda
     }
+    
     //Tabla para poner una paloma a la tarea realizada
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //Palomar la tarea
