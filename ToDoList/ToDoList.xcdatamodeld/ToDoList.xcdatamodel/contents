@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H1824" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Tarea" representedClassName="Tarea" syncable="YES" codeGenerationType="class">
+    <entity name="Jugador" representedClassName="Jugador" syncable="YES" codeGenerationType="class">
+        <attribute name="dorsal" optional="YES" attributeType="String"/>
         <attribute name="nombre" optional="YES" attributeType="String"/>
-        <attribute name="realizada" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="sub" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Partidos" representedClassName="Partidos" syncable="YES" codeGenerationType="class">
+        <attribute name="equipoRival" optional="YES" attributeType="String"/>
+        <attribute name="golesContra" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="golesFavor" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="Tarea" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Jugador" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="Partidos" positionX="-63" positionY="0" width="128" height="88"/>
     </elements>
 </model>

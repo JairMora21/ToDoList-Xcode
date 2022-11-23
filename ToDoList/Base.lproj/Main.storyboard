@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Lista Pendientes-->
+        <!--Amsterdam-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,9 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Icb-ia-zB1">
-                                <rect key="frame" x="0.0" y="88" width="414" height="649"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Icb-ia-zB1">
+                                <rect key="frame" x="0.0" y="247" width="414" height="517"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="517" id="Ql9-W4-Cwt"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celda" textLabel="k3M-tZ-rxf" detailTextLabel="UHX-rg-sq4" imageView="zVp-4U-T16" style="IBUITableViewCellStyleSubtitle" id="eM4-ka-kxr">
                                         <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
@@ -41,8 +44,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="note.text" catalog="system" id="zVp-4U-T16">
-                                                    <rect key="frame" x="21.5" y="18.5" width="21" height="17.5"/>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="person.fill" catalog="system" id="zVp-4U-T16">
+                                                    <rect key="frame" x="23" y="19" width="18" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -50,18 +53,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Amsterdam" translatesAutoresizingMaskIntoConstraints="NO" id="7z8-3S-afs">
+                                <rect key="frame" x="130" y="103" width="154" height="136"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Icb-ia-zB1" secondAttribute="bottom" id="C99-JK-m1h"/>
-                            <constraint firstItem="Icb-ia-zB1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Sr4-bR-qlD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Icb-ia-zB1" secondAttribute="trailing" id="WF6-op-drq"/>
-                            <constraint firstItem="Icb-ia-zB1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hxg-iZ-Jx6"/>
+                            <constraint firstItem="Icb-ia-zB1" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="8ZK-Yf-XhP"/>
+                            <constraint firstItem="Icb-ia-zB1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ABY-g5-D8R"/>
+                            <constraint firstItem="7z8-3S-afs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="Gy8-ot-dNl"/>
+                            <constraint firstItem="7z8-3S-afs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="130" id="Oav-qc-uGE"/>
+                            <constraint firstItem="Icb-ia-zB1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="epY-eD-RJP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7z8-3S-afs" secondAttribute="trailing" constant="130" id="gVo-n2-HPM"/>
+                            <constraint firstItem="Icb-ia-zB1" firstAttribute="top" secondItem="7z8-3S-afs" secondAttribute="bottom" constant="8" symbolic="YES" id="gXK-lP-vF4"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Lista Pendientes" id="bmM-eX-LSg">
+                    <navigationItem key="navigationItem" title="Amsterdam" id="bmM-eX-LSg">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="AEY-Dz-2DF">
                             <connections>
                                 <action selector="nuevaTarea:" destination="BYZ-38-t0r" id="rqd-Bh-h9h"/>
@@ -70,18 +79,18 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="tablaTareas" destination="Icb-ia-zB1" id="yFT-6W-cme"/>
+                        <outlet property="tablaJugador" destination="Icb-ia-zB1" id="yFT-6W-cme"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1786.9565217391305" y="18.75"/>
+            <point key="canvasLocation" x="1789.8550724637682" y="93.75"/>
         </scene>
         <!--Item-->
         <scene sceneID="FU8-uV-Kho">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8au-Kr-PIF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="qm7-UB-MiL"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="person.3.fill" catalog="system" id="qm7-UB-MiL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nNK-F3-zg7">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -96,7 +105,7 @@
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="93.75"/>
         </scene>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="WwN-uu-MUY">
             <objects>
                 <viewController id="Ygz-Oh-MLL" sceneMemberID="viewController">
@@ -106,26 +115,11 @@
                         <viewLayoutGuide key="safeArea" id="wFI-gO-vem"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Atu-hB-uA7"/>
+                    <navigationItem key="navigationItem" id="1jb-17-LaP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EiK-OT-diH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="944.92753623188412" y="758.70535714285711"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="NiS-Bt-6kr">
-            <objects>
-                <viewController id="OZZ-br-sUZ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Klb-zM-fVG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="hfU-vz-QmO"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b02-IE-Wh3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1826.0869565217392" y="803.57142857142856"/>
+            <point key="canvasLocation" x="1790" y="759"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rjI-7A-dRI">
@@ -138,16 +132,38 @@
                     </tabBar>
                     <connections>
                         <segue destination="8au-Kr-PIF" kind="relationship" relationship="viewControllers" id="aeZ-tl-V7R"/>
-                        <segue destination="Ygz-Oh-MLL" kind="relationship" relationship="viewControllers" id="gyc-k9-LCx"/>
+                        <segue destination="NcJ-TE-SLZ" kind="relationship" relationship="viewControllers" id="gyc-k9-LCx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9i-3n-OFm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="143" y="459"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="bpL-e2-Tlx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NcJ-TE-SLZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="rotate.3d" catalog="system" id="Atu-hB-uA7"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xVs-2e-DtV">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ygz-Oh-MLL" kind="relationship" relationship="rootViewController" id="Xcd-9C-lcr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YRb-MA-n1u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944.92753623188412" y="758.70535714285711"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="note.text" catalog="system" width="128" height="106"/>
+        <image name="Amsterdam" width="360" height="259"/>
+        <image name="person.3.fill" catalog="system" width="128" height="61"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="rotate.3d" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -10,72 +10,50 @@ import CoreData
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var tablaTareas: UITableView!
+    @IBOutlet weak var tablaJugador: UITableView!
     
-    var listaTareas = [Tarea]()
+    var listaJugador = [Jugador]()
     
     //Referencia al coredata
     let contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tablaTareas.delegate = self
-        tablaTareas.dataSource = self
-        leerTareas()
+        tablaJugador.delegate = self
+        tablaJugador.dataSource = self
+        leerJugadores()
     } 
  
     
     @IBAction func nuevaTarea(_ sender: UIBarButtonItem) {
-        var nombreTarea = UITextField()
-        var nombreSubTarea = UITextField()
+        var nombreJugador = UITextField()
+        var dorsal = UITextField()
 
         
-        let alerta = UIAlertController(title: "Nueva", message: "Tarea", preferredStyle: .alert)
+        let alerta = UIAlertController(title: "Amsterdam", message: "Nuevo Jugador", preferredStyle: .alert)
         
         let accionAceptar = UIAlertAction(title: "Agregar", style: .default) { (_) in
-            let nuevaTarea = Tarea(context: self.contexto)
-            nuevaTarea.nombre = nombreTarea.text
-            nuevaTarea.sub = nombreSubTarea.text
-            nuevaTarea.realizada = false
+            let nuevaTarea = Jugador(context: self.contexto)
+            nuevaTarea.nombre = nombreJugador.text
+            nuevaTarea.dorsal = dorsal.text
             
-            self.listaTareas.append(nuevaTarea)
+            self.listaJugador.append(nuevaTarea)
             
             self.guardar()
         }
         
         alerta.addTextField { textFieldAlert in
-            textFieldAlert.placeholder = "Escribe tu texto aqui.."
-            nombreTarea =  textFieldAlert
+            textFieldAlert.placeholder = "Nombre completo..."
+            nombreJugador =  textFieldAlert
         }
         alerta.addTextField { textFieldAlert in
-            textFieldAlert.placeholder = "SubTarea"
-            nombreSubTarea =  textFieldAlert
+            textFieldAlert.placeholder = "Dorsal..."
+            dorsal =  textFieldAlert
         }
         alerta.addAction(accionAceptar)
         
         present(alerta,animated: true)
-        /*
-        var nombreSub = UITextField()
         
-        let alertaSub = UIAlertController(title: "Subtarea", message: "SUBTarea", preferredStyle: .alert)
-        
-        let accionAceptarSub = UIAlertAction(title: "Agregar", style: .default) { (_) in
-            let nuevaTareaSub = Tarea(context: self.contexto)
-            nuevaTareaSub.sub = nombreSub.text
-            
-            self.listaTareas.append(nuevaTareaSub)
-            
-            self.guardar()
-        }
-        
-        alertaSub.addTextField { textFieldAlert in
-            textFieldAlert.placeholder = "Escribe tu texto aqui.."
-            nombreSub =  textFieldAlert
-        }
-        alertaSub.addAction(accionAceptarSub)
-        
-        present(alertaSub,animated: true)
-  */
     }
     
     
@@ -86,15 +64,15 @@ class ViewController: UIViewController {
         }catch{
             print(error.localizedDescription)
         }
-        self.tablaTareas.reloadData()
+        self.tablaJugador.reloadData()
     }
     
     //lee las tareas
-    func leerTareas(){
-        let solicitud : NSFetchRequest<Tarea> = Tarea.fetchRequest()
+    func leerJugadores(){
+        let solicitud : NSFetchRequest<Jugador> = Jugador.fetchRequest()
         
         do {
-            listaTareas = try contexto.fetch(solicitud)
+            listaJugador = try contexto.fetch(solicitud)
         } catch{
             print(error.localizedDescription)
         }
@@ -105,18 +83,18 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listaTareas.count
+        return listaJugador.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let celda = tablaTareas.dequeueReusableCell(withIdentifier: "celda", for: indexPath)
+        let celda = tablaJugador.dequeueReusableCell(withIdentifier: "celda", for: indexPath)
     
         
-        let  tarea = listaTareas[indexPath.row]
+        let  jugador = listaJugador[indexPath.row]
         //Operadores ternearios
         //pone los valores de la tarea en la tabla
-        celda.detailTextLabel?.text = tarea.sub
-        celda.textLabel?.text = tarea.nombre
+        celda.detailTextLabel?.text = jugador.dorsal
+        celda.textLabel?.text = jugador.nombre
 
         /*pone de color la tarea depende si esa hecha o no
         celda.textLabel?.textColor = tarea.realizada ? .black : .blue
@@ -150,8 +128,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     //Tabla para eliminar las tareas
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let accionEliminar = UIContextualAction(style: .normal, title: "Eliminar") { _,_,_  in
-            self.contexto.delete(self.listaTareas[indexPath.row])
-            self.listaTareas.remove(at: indexPath.row)
+            self.contexto.delete(self.listaJugador[indexPath.row])
+            self.listaJugador.remove(at: indexPath.row)
             self.guardar()
         }
         accionEliminar.backgroundColor = .red

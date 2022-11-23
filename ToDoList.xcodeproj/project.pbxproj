@@ -14,7 +14,6 @@
 		FB4A1DAC2900D955007BE02E /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB4A1DAA2900D955007BE02E /* ToDoList.xcdatamodeld */; };
 		FB4A1DAE2900D95A007BE02E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB4A1DAD2900D95A007BE02E /* Assets.xcassets */; };
 		FB4A1DB12900D95A007BE02E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB4A1DAF2900D95A007BE02E /* LaunchScreen.storyboard */; };
-		FB63E80829024371004439BA /* ViewControllerTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB63E80729024371004439BA /* ViewControllerTwo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		FB4A1DAD2900D95A007BE02E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB4A1DB02900D95A007BE02E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB4A1DB22900D95A007BE02E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB63E80729024371004439BA /* ViewControllerTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTwo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +66,6 @@
 				FB4A1DAF2900D95A007BE02E /* LaunchScreen.storyboard */,
 				FB4A1DB22900D95A007BE02E /* Info.plist */,
 				FB4A1DAA2900D955007BE02E /* ToDoList.xcdatamodeld */,
-				FB63E80729024371004439BA /* ViewControllerTwo.swift */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
@@ -143,7 +140,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB63E80829024371004439BA /* ViewControllerTwo.swift in Sources */,
 				FB4A1DA62900D955007BE02E /* ViewController.swift in Sources */,
 				FB4A1DA22900D955007BE02E /* AppDelegate.swift in Sources */,
 				FB4A1DA42900D955007BE02E /* SceneDelegate.swift in Sources */,
