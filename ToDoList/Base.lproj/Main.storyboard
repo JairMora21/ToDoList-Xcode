@@ -105,17 +105,61 @@
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="93.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Partidos-->
         <scene sceneID="WwN-uu-MUY">
             <objects>
-                <viewController id="Ygz-Oh-MLL" sceneMemberID="viewController">
+                <viewController id="Ygz-Oh-MLL" customClass="ViewControllerPartido" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZCs-pm-YwC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jmT-eh-nmH">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="BWu-RX-n5O" imageView="loF-Tv-Fi9" style="IBUITableViewCellStyleDefault" id="Qi5-vU-vJY">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qi5-vU-vJY" id="gnd-Uh-gbN">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BWu-RX-n5O">
+                                                    <rect key="frame" x="59" y="0.0" width="335" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="circle.dashed.inset.fill" catalog="system" id="loF-Tv-Fi9">
+                                                    <rect key="frame" x="22" y="12" width="20" height="19"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="wFI-gO-vem"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wFI-gO-vem" firstAttribute="bottom" secondItem="jmT-eh-nmH" secondAttribute="bottom" id="0og-Ws-rjf"/>
+                            <constraint firstItem="wFI-gO-vem" firstAttribute="trailing" secondItem="jmT-eh-nmH" secondAttribute="trailing" id="Yf3-QM-Yo9"/>
+                            <constraint firstItem="jmT-eh-nmH" firstAttribute="top" secondItem="wFI-gO-vem" secondAttribute="top" id="mLm-Te-VJG"/>
+                            <constraint firstItem="jmT-eh-nmH" firstAttribute="leading" secondItem="wFI-gO-vem" secondAttribute="leading" id="vER-fu-9qZ"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="1jb-17-LaP"/>
+                    <navigationItem key="navigationItem" title="Partidos" id="1jb-17-LaP">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="XsI-zn-IHo">
+                            <connections>
+                                <action selector="nuevoPartido:" destination="Ygz-Oh-MLL" id="0rv-zS-pLC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tablaPartido" destination="jmT-eh-nmH" id="Bjm-ON-5e0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EiK-OT-diH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -127,6 +171,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="8Y6-k9-7p6" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ooz-lQ-9jP">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -161,6 +206,7 @@
     </scenes>
     <resources>
         <image name="Amsterdam" width="360" height="259"/>
+        <image name="circle.dashed.inset.fill" catalog="system" width="128" height="121"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="rotate.3d" catalog="system" width="128" height="121"/>
