@@ -115,7 +115,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         let  tarea = listaTareas[indexPath.row]
         //Operadores ternearios
         //pone los valores de la tarea en la tabla
-        celda.textLabel?.text = tarea.sub
+        celda.detailTextLabel?.text = tarea.sub
         celda.textLabel?.text = tarea.nombre
 
         /*pone de color la tarea depende si esa hecha o no
@@ -129,7 +129,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         return celda
     }
     
-    //Tabla para poner una paloma a la tarea realizada
+    /*Tabla para poner una paloma a la tarea realizada
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //Palomar la tarea
         if tablaTareas.cellForRow(at: indexPath)?.accessoryType == .checkmark{
@@ -145,6 +145,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         //deselecciona la tarea
         tablaTareas.deselectRow(at: indexPath, animated: true)
     }
+ */
     
     //Tabla para eliminar las tareas
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
